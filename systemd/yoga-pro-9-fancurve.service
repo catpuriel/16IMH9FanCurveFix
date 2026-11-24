@@ -1,0 +1,16 @@
+[Unit]
+Description=Lenovo Yoga Pro 9 16IMH9 Safe Dynamic Fan Curve Daemon
+After=multi-user.target systemd-modules-load.service
+
+[Service]
+Type=simple
+WorkingDirectory=@REPO_DIR@
+Environment=PYTHONPATH=@REPO_DIR@
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 -m yoga_fancurve.daemon --group @TARGET_USER@
+ExecStopPost=/usr/bin/python3 -m yoga_fancurve.daemon --restore-auto-only
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

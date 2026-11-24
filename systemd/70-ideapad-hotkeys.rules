@@ -1,0 +1,3 @@
+# Grant the active logged-in desktop user access ONLY to Lenovo's 'Ideapad extra buttons'
+# Must be numbered < 73 so systemd's 73-seat-late.rules applies the uaccess ACL.
+SUBSYSTEM=="input", KERNEL=="event*", ATTRS{name}=="Ideapad extra buttons", TAG+="uaccess"

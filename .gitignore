@@ -1,0 +1,13 @@
+# Local firmware/ACPI analysis dumps and probe artifacts (never commit)
+analysis/
+
+# Python caches
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# KDE / editor metadata
+.directory
+*.swp
+.DS_Store

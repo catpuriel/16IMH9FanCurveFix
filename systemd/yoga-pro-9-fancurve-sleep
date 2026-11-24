@@ -1,0 +1,13 @@
+#!/bin/sh
+# Systemd sleep hook: restore BIOS automatic fan control before suspend,
+# and smoothly resume dynamic fan curve after wake.
+export PYTHONPATH=@REPO_DIR@
+
+case "$1" in
+  pre)
+    /usr/bin/python3 -m yoga_fancurve.daemon --ipc-cmd suspend_prepare || true
+    ;;
+  post)
+    /usr/bin/python3 -m yoga_fancurve.daemon --ipc-cmd suspend_resume || true
+    ;;
+esac

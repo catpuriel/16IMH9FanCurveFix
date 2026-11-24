@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Yoga Pro 9 Fan Curve
+Comment=Safe dynamic fan curve monitor and controller for Lenovo Yoga Pro 9 16IMH9
+Exec=/usr/bin/env PYTHONPATH=@REPO_DIR@ /usr/bin/python3 -m yoga_fancurve.gui
+Icon=utilities-system-monitor
+Terminal=false
+Categories=System;Utility;HardwareSettings;
+Keywords=fan;cooling;curve;lenovo;yoga;temperature;
